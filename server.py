@@ -3,14 +3,7 @@ import json
 
 class SimpleAPI(BaseHTTPRequestHandler):
       
-      # ----SimpleAPI-----
-      # A minimal REST API implemented using python built-in HTTP server.
-      # this class handles HTTP GET and POST request for managing users.
-      #-----Endpoint------
-      # GET /users - > returns list of users
-      # POST /users -> creates a new user
-
-    # Initialize with some default users
+      
       users = ["Alice", "Bob"]
 
       def send_json(self, data, status=200):
@@ -84,14 +77,4 @@ print("Server running at http://localhost:8000")
 server.serve_forever()                
 
 
-# Testing in postman
-# GET http://localhost:8000/users
-# Response: {"users": ["Alice", "Bob"]}
 
-# POST http://localhost:8000/users
-# Body: {"name": "Charlie"}
-# Response: {"message": "User created", "users": ["Alice", "Bob", "Charlie"]}
-
-# verify user was added
-# GET http://localhost:8000/users
-# Response: {"users": ["Alice", "Bob", "Charlie"]}
